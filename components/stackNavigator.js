@@ -1,31 +1,19 @@
 import * as React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-paper";
+// import { Button } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
-import APIDataScreen from "./screens/screen1";
-import countryDetail from "./screens/screen2";
+import FetchAPIData from "./screens/screen1";
+import CountryStatsScreen from "./screens/screen2";
+// import navContainerGS from "./screens/screen3";
 
 const Stack = createStackNavigator();
-const Names = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-};
-const Names2 = () => {
-  return (
-    <View style={styles.container}>
-      <Text> your app!</Text>
-    </View>
-  );
-};
+
 
 const stackNavigator = () => {
   return (
     <Stack.Navigator
-      // initialRouteName={"One"}
+      // initialRouteName={"/"}
       screenOptions={({ navigation }) => ({
         headerLeft: () => (
           <View style={{ paddingLeft: 10 }}>
@@ -39,10 +27,23 @@ const stackNavigator = () => {
         ),
       })}
     >
-      <Stack.Screen name="Home" component={APIDataScreen} />
-      <Stack.Screen name="Details" component={countryDetail} />
-      {/* <Stack.Screen name="Three" component={Names} />
-      <Stack.Screen name="Four" component={Names2} /> */}
+      <Stack.Screen name="Home" component={FetchAPIData} />
+      <Stack.Screen 
+      name="CountryStats" 
+      component={CountryStatsScreen} 
+      options={({navigation})=>({
+        headerLeft:()=>
+          (
+            <View style={{ paddingLeft: 10 }}>
+              <Ionicons
+                name="md-arrow-back"
+                size={32}
+                color="black"
+                onPress={() => navigation.goBack()}
+              />
+            </View>
+          ),
+      })}/>
     </Stack.Navigator>
   );
 };

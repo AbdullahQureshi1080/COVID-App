@@ -22,7 +22,7 @@ import MyDrawer from "./components/drawerNavigator";
 // }
 
 class App extends React.Component {
-  state = {};
+  // state = {};
   render() {
     return (
       <NavigationContainer>

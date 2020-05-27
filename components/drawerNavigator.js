@@ -6,6 +6,7 @@ import stackNavigator from "./stackNavigator";
 import bottomTabs from "./bottomNavigator";
 import { MaterialIcons,Ionicons,MaterialCommunityIcons } from '@expo/vector-icons';
 import navContainerGS from "./screens/screen3";
+// import globalSummary from "./screens/screen3";
 const Drawer = createDrawerNavigator();
 
 const MyDrawer = () =>{
